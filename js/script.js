@@ -122,8 +122,23 @@ let quotes = [
  * `getRandomQuote` function
 ***/
 
+/**
+ * Generates a random number between 0-14
+ * Stores that number as randomIndex
+ * @returns quote object at the randomIndex of quotes array
+ */
 
+const getRandomQuote = () => {
+  let randomIndex = Math.floor(Math.random() * quotes.length);
+  /* test that random number between 0 and 14 is working -- remove at submission */
+  // console.log(randomIndex); 
+  let quote = quotes[randomIndex];
+  /* test that quote object is logged as expected */
+  // console.log(quote);
+  return quote;
+};
 
+getRandomQuote();
 /***
  * `printQuote` function
 ***/
