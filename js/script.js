@@ -12,7 +12,7 @@ project 1 - A Random Quote Generator
 ***/
 let quotes = [
   {
-    quote: 'The problem with going to restaurants is that they\'re not in my room',
+    quote: 'The problem with going to restaurants is that they\'re not in my room.',
     source: 'Daria Morgendorffer',
     citation: 'Daria, Season 5: My Night at Daria\s',
     year: 2001,
@@ -33,7 +33,7 @@ let quotes = [
     foundURL: 'https://quotecatalog.com/quotes/tv/parks-and-recreation'
   },
   {
-    quote: 'Look at that font! What is this? Amateur hour? At least us Palatino.',
+    quote: 'Look at that font! What is this? Amateur hour? At least use Palatino.',
     source: 'Nick Miller',
     citation: 'New Girl, Season 2: Pepperwood',
     year: 2013,
@@ -89,7 +89,7 @@ let quotes = [
     foundURL: 'https://quotecatalog.com/quotes/tv/bones'
   },
   {
-    quote: 'I am not warm and fuzzy and you are basically a stuffed animal made by grandma.',
+    quote: 'I am not warm and fuzzy, and you are basically a stuffed animal made by grandma.',
     source: 'Dr. Gregory House',
     citation: 'House, Season 1: Role Model',
     year: 2005,
@@ -110,7 +110,7 @@ let quotes = [
     foundURL: 'https://maybeillshowertoday.com/2016/04/08/empire-record-quotes-that-apply-directly-to-parenting/'
   },
   {
-    quote: 'What is this? A center for ants? How can we be expected to teach children to learn how to read if they can\'t event fit inside the building?',
+    quote: 'What is this? A center for ants? How can we be expected to teach children to learn how to read if they can\'t even fit inside the building?',
     source: 'Derek Zoolander',
     citation: 'Zoolander',
     year: 2001,
