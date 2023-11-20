@@ -127,23 +127,40 @@ let quotes = [
  * Stores that number as randomIndex
  * @returns quote object at the randomIndex of quotes array
  */
-
 const getRandomQuote = () => {
   let randomIndex = Math.floor(Math.random() * quotes.length);
-  /* test that random number between 0 and 14 is working -- remove at submission */
-  // console.log(randomIndex); 
   let quote = quotes[randomIndex];
-  /* test that quote object is logged as expected */
-  // console.log(quote);
   return quote;
 };
 
-getRandomQuote();
 /***
  * `printQuote` function
 ***/
 
+/**
+ * Calls getRandomQuote()
+ * Creates string of HTML with quote properties
+ * Displays created string in the browser
+ */
+const printQuote = () => {
+  let quote = getRandomQuote();
+  let html = `
+    <p class="quote">${quote.quote}</p>
+    <p class="source">${quote.source}
+    `;
 
+  if (quote.citation) {
+    html += `<span class="citation">${quote.citation}</span>`;
+  }
+
+  if (quote.year) {
+    html += `<span class="year">${quote.year}</span>`;
+  }
+
+  html += `</p>`;
+
+  document.getElementById('quote-box').innerHTML = html;
+};
 
 /***
  * click event listener for the print quote button
