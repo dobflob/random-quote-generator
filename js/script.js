@@ -177,6 +177,8 @@ const printQuote = () => {
   document.getElementById('quote-box').innerHTML = html;
 };
 
+const autoRefresh = setInterval(printQuote, 15000);
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
