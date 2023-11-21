@@ -115,6 +115,13 @@ h1 {
   font-style: normal;
 }
 
+.tags {
+  font-size: .9rem;
+  text-transform: lowercase;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+}
+
 @media (min-width: 768px) {
   body {
     padding: 25px;

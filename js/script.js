@@ -16,6 +16,7 @@ let quotes = [
     source: 'Daria Morgendorffer',
     citation: 'Daria, Season 5: My Night at Daria\s',
     year: 2001,
+    tags: ['Comedy', 'Drama', 'Satire', 'Slice-of-Life', 'Cult Classic', '90s'],
     foundURL: 'https://quotecatalog.com/quotes/tv/daria'
   },
   {
@@ -23,6 +24,7 @@ let quotes = [
     source: 'Abbi Abrams',
     citation: 'Broad City, Season 1',
     year: 2014,
+    tags: ['Comedy', 'Feminism'],
     foundURL: 'https://quotecatalog.com/quotes/tv/broad-city'
   },
   {
@@ -30,6 +32,7 @@ let quotes = [
     source: 'Ron Swanson',
     citation: 'Parks and Recreation, Season 3: Flu Season',
     year: 2011,
+    tags: ['Comedy', 'Satire'],
     foundURL: 'https://quotecatalog.com/quotes/tv/parks-and-recreation'
   },
   {
@@ -37,6 +40,7 @@ let quotes = [
     source: 'Nick Miller',
     citation: 'New Girl, Season 2: Pepperwood',
     year: 2013,
+    tags: ['Comedy', 'Drama'],
     foundURL: 'https://quotecatalog.com/quotes/tv/new-girl'
   },
   {
@@ -44,6 +48,7 @@ let quotes = [
     source: 'Schmidt',
     citation: 'New Girl, Season 1: Backslide',
     year: 2012,
+    tags: ['Comedy', 'Drama'],
     foundURL: 'https://quotecatalog.com/quotes/tv/new-girl'
   },
   {
@@ -51,6 +56,7 @@ let quotes = [
     source: 'Winifred Sanderson',
     citation: 'Hocus Pocus',
     year: 1993,
+    tags: ['Comedy', 'Halloween', 'Cult Classic', '90s'],
     foundURL: 'https://www.boredpanda.com/90s-movie-quotes/'
   },
   {
@@ -58,6 +64,7 @@ let quotes = [
     source: 'Lester Bangs',
     citation: 'Almost Famous',
     year: 2000,
+    tags: ['Comedy', 'Drama', 'Rock \'n\' Roll'],
     foundURL: 'https://www.pastemagazine.com/movies/almost-famous/the-15-best-quotes-from-almost-famous'
   },
   {
@@ -65,6 +72,7 @@ let quotes = [
     source: 'Sam Weir',
     citation: 'Freaks and Geeks, Season 1: Girlfriends and Boyfriends',
     year: 2000,
+    tags: ['Comedy', 'Drama', 'Cult Classic'],
     foundURL: 'https://quotecatalog.com/quotes/tv/freaks-and-geeks'
   },
   {
@@ -72,6 +80,7 @@ let quotes = [
     source: 'Michael',
     citation: 'The Good Place, Season 2: Best Self',
     year: 2018,
+    tags: ['Comedy', 'Feel Good', 'Satire'],
     foundURL: 'https://www.boredpanda.com/the-good-place-quotes/'
   },
   {
@@ -79,13 +88,15 @@ let quotes = [
     source: 'Chidi Anagonye',
     citation: 'The Good Place, Season 4: The Answer',
     year: 2019,
+    tags: ['Comedy', 'Feel Good', 'Reflective'],
     foundURL: 'https://www.boredpanda.com/the-good-place-quotes/'
   },
   {
     quote: 'Nothing in this universe happens just once. Infinity goes in both directions. There is no unique event, no singular moment.',
-    source: 'Temperance "Bones" Brennan',
+    source: 'Dr. Temperance Brennan',
     citation: 'Bones, Season 1: The Skull in the Desert',
     year: 2006,
+    tags: ['Drama', 'Reflective'],
     foundURL: 'https://quotecatalog.com/quotes/tv/bones'
   },
   {
@@ -93,6 +104,7 @@ let quotes = [
     source: 'Dr. Gregory House',
     citation: 'House, Season 1: Role Model',
     year: 2005,
+    tags: ['Drama', 'Medical', 'Comedy'],
     foundURL: 'https://quotecatalog.com/communicator/dr-gregory-house'
   },
   {
@@ -100,6 +112,7 @@ let quotes = [
     source: 'Abe Weissman',
     citation: 'The Marvelous Mrs. Maisel, Season 1: Pilot',
     year: 2017,
+    tags: ['Comedy', 'Drama', 'Feminism', 'Period Piece'],
     foundURL: 'https://parade.com/895436/solanahawkenson/19-of-the-best-quotes-from-the-marvelous-mrs-maisel-about-life-love-and-being-a-woman/'
   },
   {
@@ -107,6 +120,7 @@ let quotes = [
     source: 'Lucas',
     citation: 'Empire Records',
     year: 1995,
+    tags: ['Comedy', 'Rock \'n\' Roll', 'Cult Classic', '90s'],
     foundURL: 'https://maybeillshowertoday.com/2016/04/08/empire-record-quotes-that-apply-directly-to-parenting/'
   },
   {
@@ -114,6 +128,7 @@ let quotes = [
     source: 'Derek Zoolander',
     citation: 'Zoolander',
     year: 2001,
+    tags: ['Humor', 'Satire', 'Cult Classic'],
     foundURL: 'https://www.imdb.com/title/tt0196229/characters/nm0002071'
   }
 ];
@@ -146,17 +161,17 @@ const printQuote = () => {
   let quote = getRandomQuote();
   let html = `
     <p class="quote">${quote.quote}</p>
-    <p class="source">${quote.source}
-    `;
+    <p class="source">${quote.source}`;
 
   if (quote.citation) {
     html += `<span class="citation">${quote.citation}</span>`;
   }
-
   if (quote.year) {
     html += `<span class="year">${quote.year}</span>`;
   }
-
+  if (quote.tags) {
+    html += `<br><span class="tags">${quote.tags.join(' | ')}</span>`;
+  }
   html += `</p>`;
 
   document.getElementById('quote-box').innerHTML = html;
