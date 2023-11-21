@@ -149,6 +149,26 @@ const getRandomQuote = () => {
 };
 
 /***
+ * `getRandomRGB` function
+***/
+
+/**
+ * Generates a random number between 0-255
+ * Create array with a length of 3 to hold the random numbers
+ * Uses array because array.join() will output 3 comma separated values, which is format for setting background color
+ * @returns rgb array [x, x, x]
+ */
+const getRandomRGB = () => {
+  let rgb = [0, 0, 0]; //set rgb array to hold 0 in each position for red, green, blue
+  for (i = 0; i < rgb.length; i++) {
+    let colorValue = Math.floor(Math.random() * 256);
+    rgb[i] = colorValue;
+  }
+  console.log(rgb);
+  return rgb;
+}; //TODO: set background color with new rgb color
+
+/***
  * `printQuote` function
 ***/
 
@@ -177,6 +197,9 @@ const printQuote = () => {
   document.getElementById('quote-box').innerHTML = html;
 };
 
+/**
+ * Global method that calls a function repeatedly every 15 seconds
+ */
 const autoRefresh = setInterval(printQuote, 15000);
 
 /***
