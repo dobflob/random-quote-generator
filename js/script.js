@@ -149,35 +149,37 @@ const getRandomQuote = () => {
 };
 
 /***
- * `getRandomRGB` function
+ * `getRandomBGColor` function
 ***/
 
 /**
  * Generates a random number between 0-255
  * Create array with a length of 3 to hold the random numbers
  * Uses array because array.join() will output 3 comma separated values, which is format for setting background color
+ * Sets background color of body element to new rgb value
  * @returns rgb array [x, x, x]
  */
-const getRandomRGB = () => {
+const getRandomBGColor = () => {
   let rgb = [0, 0, 0]; //set rgb array to hold 0 in each position for red, green, blue
   for (i = 0; i < rgb.length; i++) {
     let colorValue = Math.floor(Math.random() * 256);
     rgb[i] = colorValue;
   }
-  console.log(rgb);
-  return rgb;
-}; //TODO: set background color with new rgb color
+  document.querySelector("body").attributeStyleMap.set("background-color", `rgb(${rgb.join(', ')})`); 
+}; 
 
 /***
  * `printQuote` function
 ***/
 
 /**
+ * Calls getRandomBGColor() to apply new background color
  * Calls getRandomQuote()
  * Creates string of HTML with quote properties
  * Displays created string in the browser
  */
 const printQuote = () => {
+  getRandomBGColor();
   let quote = getRandomQuote();
   let html = `
     <p class="quote">${quote.quote}</p>
